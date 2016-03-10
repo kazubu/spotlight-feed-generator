@@ -44,6 +44,7 @@ def get_from_iplist(url)
 
   addrs = http_get(url)
   addrs.each_line{|line|
+    next if line[0] == "#"
     puts line
   }
 end
